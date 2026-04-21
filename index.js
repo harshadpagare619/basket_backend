@@ -13,7 +13,7 @@ app.use(cors({
   origin: [
     "http://localhost:5173",
     "http://localhost:5174",
-    "https://your-dashboard-url.vercel.app"
+    "https://basket-dashboard-nine.vercel.app"
   ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
@@ -28,6 +28,7 @@ app.use((req, res, next) => {
   }
   next();
 });
+
 app.use(bodyParser.json({ limit : "10mb" }));
 app.use(bodyParser.urlencoded({ extended: true, limit: "10mb" }));
 
