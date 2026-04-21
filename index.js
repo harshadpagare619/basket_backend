@@ -17,6 +17,12 @@ app.use(cors({
 }));
 
 app.options("*", cors());
+app.use((req, res, next) => {
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(200);
+  }
+  next();
+});
 app.use(bodyParser.json({ limit : "10mb" }));
 app.use(bodyParser.urlencoded({ extended: true, limit: "10mb" }));
 
