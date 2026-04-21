@@ -10,7 +10,7 @@ const authJwt = require('./utils/jwtHelper');
 // Middleware
 
 app.use(cors({
-  origin: ["http://localhost:5173", "https://basket-dashboard-nine.vercel.app/"],
+  origin: ["http://localhost:5173", "https://basket-dashboard-nine.vercel.app/", "https://basket-dashboard-3rwg9zh69-harshadpagare-9879s-projects.vercel.app/", "https://basket-dashboard-git-main-harshadpagare-9879s-projects.vercel.app/", ],
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
 }));
