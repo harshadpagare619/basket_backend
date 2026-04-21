@@ -9,11 +9,11 @@ const authJwt = require('./utils/jwtHelper');
 
 // Middleware
 
-app.use(
-  cors({
-    origin: "*",
-  })
-);
+app.use(cors({
+  origin: ["http://localhost:5173", "https://your-dashboard-url.vercel.app"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+}));
 
 app.options("*", cors());
 app.use(bodyParser.json({ limit : "10mb" }));
