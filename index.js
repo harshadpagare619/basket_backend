@@ -10,13 +10,18 @@ const authJwt = require('./utils/jwtHelper');
 // Middleware
 
 app.use(cors({
-  origin: ["http://localhost:5173", "https://basket-dashboard-nine.vercel.app/" ],
-  methods: ["GET", "POST", "PUT", "DELETE"],
+  origin: [
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "https://your-dashboard-url.vercel.app"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
 }));
 
 app.options("*", cors());
+
 app.use((req, res, next) => {
   if (req.method === "OPTIONS") {
     return res.sendStatus(200);
