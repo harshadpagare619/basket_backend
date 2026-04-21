@@ -24,9 +24,9 @@ function authJwt() {
 
       
       //  USER AUTH ROUTES 
-      { url: /\/api\/users\/signup/, methods: ["POST"] },
-      { url: /\/api\/users\/signin/, methods: ["POST"] },
-      { url: /\/api\/users\/authWithGoogle/, methods: ["POST"] },
+      { url: /\/api\/users\/signup/, methods: ["POST", "OPTIONS"] },
+      { url: /\/api\/users\/signin/, methods: ["POST", "OPTIONS"] },
+      { url: /\/api\/users\/authWithGoogle/, methods: ["POST", "OPTIONS"] },  
 
       //  ADMIN AUTH ROUTES 
       { url: /\/api\/moderators\/signin(\/)?/, methods: ["POST"] },
