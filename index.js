@@ -13,7 +13,9 @@ app.use(cors({
   origin: [
     "http://localhost:5173",
     "http://localhost:5174",
-    "https://basket-dashboard-nine.vercel.app"
+    "http://localhost:4000",
+    "https://basket-dashboard-nine.vercel.app",
+    "https://basketwebapp.vercel.app/"
   ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],

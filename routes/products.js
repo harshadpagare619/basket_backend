@@ -108,15 +108,15 @@ router.get('/', async (req, res) => {
 })
 
 
-router.get('/', async (req, res) => {
-    const productList = await Product.find().populate('category brand');
+// router.get('/', async (req, res) => {
+//     const productList = await Product.find().populate('category brand');
 
-    if(!productList) {
-        return res.status(500).json({ success: false});
-    }
+//     if(!productList) {
+//         return res.status(500).json({ success: false});
+//     }
 
-    res.send(productList);
-});
+//     res.send(productList);
+// });
 
 router.get('/search', async (req, res) => {
     const query = req.query.q;
