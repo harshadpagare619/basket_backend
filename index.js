@@ -8,13 +8,12 @@ require('dotenv/config');
 const authJwt = require('./utils/jwtHelper');
 
 // Middleware
-
 app.use(cors({
   origin: [
     "http://localhost:5173",
     "http://localhost:5174",
     "https://basket-dashboard-nine.vercel.app",
-    "https://basketwebapp.vercel.app/",
+    "https://basketwebapp.vercel.app"
   ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
@@ -22,13 +21,6 @@ app.use(cors({
 }));
 
 app.options("*", cors());
-
-app.use((req, res, next) => {
-  if (req.method === "OPTIONS") {
-    return res.sendStatus(200);
-  }
-  next();
-});
 
 app.use(bodyParser.json({ limit : "10mb" }));
 app.use(bodyParser.urlencoded({ extended: true, limit: "10mb" }));
